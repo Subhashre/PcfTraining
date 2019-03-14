@@ -1,4 +1,6 @@
 Sample Manifest.yml -> pcf config\
+https://docs.cloudfoundry.org/devguide/deploy-apps/manifest-attributes.html
+
 ---
 applications:
 - name: pshelloworld
