@@ -229,4 +229,7 @@ attendee-mysql              cleardb          spark      attendee-services   crea
 attendee-service-instance   user-provided
 autoscale-test              app-autoscaler   standard   attendee-services   create succeeded   app-autoscaler
 
-
+ cf create-app-manifest articulate
+ Manifest file created successfully at .\articulate_manifest.yml
+ 
+cf push -f articulate_manifest.yml
