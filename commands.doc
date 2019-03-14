@@ -214,3 +214,19 @@ restart the configuration
 cf restart attendee-services
 
 
+
+C:\Users\User\Downloads\training1-master\training1-master\attendee-service>cf create-user-provided-service attendee-service-instance -p uri
+
+uri> http://attendee-services-proud-crane.cfapps.io/
+Creating user provided service attendee-service-instance in org Org@Subha / space test as bsubudhi650@gmail.com...
+
+
+C:\Users\User\Downloads\training1-master\training1-master\attendee-service>cf services
+Getting services in org Org@Subha / space test as bsubudhi650@gmail.com...
+
+name                        service          plan       bound apps          last operation     broker
+attendee-mysql              cleardb          spark      attendee-services   create succeeded   appdirect
+attendee-service-instance   user-provided
+autoscale-test              app-autoscaler   standard   attendee-services   create succeeded   app-autoscaler
+
+
