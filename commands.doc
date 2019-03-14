@@ -235,3 +235,11 @@ autoscale-test              app-autoscaler   standard   attendee-services   crea
  Manifest file created successfully at .\articulate_manifest.yml
  
 cf push -f articulate_manifest.yml
+
+cf ssh articulate-app
+route -> hostname+ domain
+cf create-route test cfapps.io --hostname subha-articulate
+cf routes
+cf map-route articulate-app cfapps.io --hostname subha-articulateulate
+
+
