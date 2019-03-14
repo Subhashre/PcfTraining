@@ -1,0 +1,216 @@
+Sample Manifest.yml -> pcf config\
+---
+applications:
+- name: pshelloworld
+  memory: 64MB
+  instances: 1
+  command: node ./bin/www
+  
+manifst 
+cf spaces
+export CF_TRACE=false
+cf create-space testing
+cf spaces
+cf target -o Org@Subha -s testing
+cf quotas
+cf target
+cf target -s test
+cf push random-route
+--------------------------
+Pushing from manifest to org Org@Subha / space test as bsubudhi650@gmail.com...
+Using manifest file C:\Users\User\Downloads\training1-master\training1-master\HelloWorld\helloworld\manifest.yml
+Getting app info...
+Updating app with these attributes...
+  name:                pshelloworld
+  path:                C:\Users\User\Downloads\training1-master\training1-master\HelloWorld\helloworld
+  command:             node ./bin/www
+  disk quota:          1G
+  health check type:   port
+  instances:           1
+  memory:              64M
+  stack:               cflinuxfs3
+  routes:
+    pshelloworld-thankful-badger.cfapps.io
+
+Updating app pshelloworld...
+Mapping routes...
+Comparing local files to remote cache...
+Packaging files to upload...
+Uploading files...
+ 3.38 KiB / 3.38 KiB [==================================================================================================================
+
+Waiting for API to complete processing files...
+   Downloading dotnet_core_buildpack_beta...
+   Downloading staticfile_buildpack...
+   Downloading java_buildpack...
+   Downloading ruby_buildpack...
+   Downloading go_buildpack...
+   Downloaded ruby_buildpack
+   Downloading dotnet_core_buildpack...
+   Downloaded staticfile_buildpack
+   Downloading nodejs_buildpack...
+   Downloaded java_buildpack
+   Downloading php_buildpack...
+   Downloaded dotnet_core_buildpack_beta
+   Downloading python_buildpack...
+   Downloaded go_buildpack
+   Downloading binary_buildpack...
+   Downloaded dotnet_core_buildpack
+   Downloaded python_buildpack
+   Downloaded nodejs_buildpack
+   Downloaded php_buildpack
+   Downloaded binary_buildpack
+   Cell 13b1a746-977a-41fc-abd6-e0e5899886b8 creating container for instance 53d07f5a-6fd0-442a-9393-a296d449f51d
+   Cell 13b1a746-977a-41fc-abd6-e0e5899886b8 successfully created container for instance 53d07f5a-6fd0-442a-9393-a296d449f51d
+   Downloading app package...
+   Downloading build artifacts cache...
+   Downloaded app package (3.4K)
+   Downloaded build artifacts cache (1.6M)
+   -----> Nodejs Buildpack version 1.6.45
+   -----> Installing binaries
+          engines.node (package.json): unspecified
+          engines.npm (package.json): unspecified (use default)
+          **WARNING** Node version not specified in package.json or .nvmrc. See: http://docs.cloudfoundry.org/buildpacks/node/node-tips.
+   -----> Installing node 6.17.0
+          Copy [/tmp/buildpacks/c1ab85dc6e9552ec89d044128b95f973/dependencies/b84146a9ce6a1b592a762a5f3fba31f8/node-6.17.0-linux-x64-cfl
+          Using default npm version: 3.10.10
+   -----> Installing yarn 1.13.0
+          Copy [/tmp/buildpacks/c1ab85dc6e9552ec89d044128b95f973/dependencies/c3667d0d4ff8360282c89bb2dad0ae18/yarn-1.13.0-any-stack-125
+          Installed yarn 1.13.0
+   -----> Creating runtime environment
+          PRO TIP: It is recommended to vendor the application's Node.js dependencies
+          Visit http://docs.cloudfoundry.org/buildpacks/node/index.html#vendoring
+          NODE_ENV=production
+          NODE_HOME=/tmp/contents529069560/deps/0/node
+          NODE_MODULES_CACHE=true
+          NODE_VERBOSE=false
+          NPM_CONFIG_LOGLEVEL=error
+          NPM_CONFIG_PRODUCTION=true
+   -----> Building dependencies
+          Installing node modules (package.json)
+   helloworld@0.0.0 /tmp/app
+   ├─┬ body-parser@1.8.4
+   │ ├── bytes@1.0.0
+   │ ├── depd@0.4.5
+   │ ├── iconv-lite@0.4.4
+   │ ├── media-typer@0.3.0
+   │ ├─┬ on-finished@2.1.0
+   │ │ └── ee-first@1.0.5
+   │ ├── qs@2.2.4
+   │ ├── raw-body@1.3.0
+   │ └─┬ type-is@1.5.7
+   │   └─┬ mime-types@2.0.14
+   │     └── mime-db@1.12.0
+   ├─┬ cookie-parser@1.3.5
+   │ ├── cookie@0.1.3
+   │ └── cookie-signature@1.0.6
+   ├─┬ debug@2.0.0
+   │ └── ms@0.6.2
+   ├─┬ express@4.9.8
+   │ ├─┬ accepts@1.1.4
+   │ │ └── negotiator@0.4.9
+   │ ├── cookie@0.1.2
+   │ ├── cookie-signature@1.0.5
+   │ ├── escape-html@1.0.1
+   │ ├─┬ etag@1.4.0
+   │ │ └── crc@3.0.0
+   │ ├── finalhandler@0.2.0
+   │ ├── fresh@0.2.4
+   │ ├── merge-descriptors@0.0.2
+   │ ├── methods@1.1.0
+   │ ├── parseurl@1.3.2
+   │ ├── path-to-regexp@0.1.3
+   │ ├─┬ proxy-addr@1.0.10
+   │ │ ├── forwarded@0.1.2
+   │ │ └── ipaddr.js@1.0.5
+   │ ├── range-parser@1.0.3
+   │ ├─┬ send@0.9.3
+   │ │ ├── destroy@1.0.3
+   │ │ └── mime@1.2.11
+   │ ├── serve-static@1.6.5
+   │ ├── utils-merge@1.0.0
+   │ └── vary@1.0.1
+   ├─┬ jade@1.6.0
+   │ ├── character-parser@1.2.0
+   │ ├── commander@2.1.0
+   │ ├─┬ constantinople@2.0.1
+   │ │ └─┬ uglify-js@2.4.24
+   │ │   ├── async@0.2.10
+   │ │   ├─┬ source-map@0.1.34
+   │ │   │ └── amdefine@1.0.1
+   │ │   ├── uglify-to-browserify@1.0.2
+   │ │   └─┬ yargs@3.5.4
+   │ │     ├── camelcase@1.2.1
+   │ │     ├── decamelize@1.2.0
+   │ │     ├── window-size@0.1.0
+   │ │     └── wordwrap@0.0.2
+   │ ├─┬ mkdirp@0.5.1
+   │ │ └── minimist@0.0.8
+   │ ├─┬ monocle@1.1.51
+   │ │ └─┬ readdirp@0.2.5
+   │ │   └─┬ minimatch@3.0.4
+   │ │     └─┬ brace-expansion@1.1.11
+   │ │       ├── balanced-match@1.0.0
+   │ │       └── concat-map@0.0.1
+   │ ├─┬ transformers@2.1.0
+   │ │ ├─┬ css@1.0.8
+   │ │ │ ├── css-parse@1.0.4
+   │ │ │ └── css-stringify@1.0.5
+   │ │ ├─┬ promise@2.0.0
+   │ │ │ └── is-promise@1.0.1
+   │ │ └─┬ uglify-js@2.2.5
+   │ │   └── optimist@0.3.7
+   │ ├── void-elements@1.0.0
+   │ └── with@3.0.1
+   ├─┬ morgan@1.3.2
+   │ └── basic-auth@1.0.0
+   └─┬ serve-favicon@2.1.7
+     └─┬ etag@1.5.1
+       └── crc@3.2.1
+   Exit status 0
+   Uploading droplet, build artifacts cache...
+   Uploading droplet...
+   Uploading build artifacts cache...
+   Uploaded build artifacts cache (1.6M)
+   Uploaded droplet (16.3M)
+   Uploading complete
+   Cell 13b1a746-977a-41fc-abd6-e0e5899886b8 stopping instance 53d07f5a-6fd0-442a-9393-a296d449f51d
+   Cell 13b1a746-977a-41fc-abd6-e0e5899886b8 destroying container for instance 53d07f5a-6fd0-442a-9393-a296d449f51d
+   Cell 13b1a746-977a-41fc-abd6-e0e5899886b8 successfully destroyed container for instance 53d07f5a-6fd0-442a-9393-a296d449f51d
+
+Waiting for app to start...
+
+name:              pshelloworld
+requested state:   started
+routes:            pshelloworld-thankful-badger.cfapps.io
+last uploaded:     Thu 14 Mar 11:53:18 IST 2019
+stack:             cflinuxfs3
+buildpacks:        nodejs
+
+type:            web
+instances:       1/1
+memory usage:    64M
+start command:   node ./bin/www
+     state     since                  cpu    memory     disk      details
+#0   running   2019-03-14T06:23:27Z   0.0%   0 of 64M   0 of 1G
+------------------------------------------
+cf apps
+cf stop pshelloworld
+cf delete pshelloworld
+cf push articulate --random-route -p articulate-0.2.jar -m 512M
+cf push articulate --random-route -p articulate-0.2.jar -m 768M --no-start
+
+-------------------------------------------scaling
+vertical -- resource sizing(memory,disk)--requires a restart --not recommended in production
+horizontal chnaging the number of instance -- no restart required
+
+cf scale articulate -i 2
+cf create-service cleardb spark attendee-mysql
+cf services
+cf bind-service attendee-services attendee-mysql
+cf env attendee-services
+
+restart the configuration
+cf restart attendee-services
+
+
